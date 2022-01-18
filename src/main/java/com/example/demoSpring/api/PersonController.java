@@ -2,6 +2,8 @@ package com.example.demoSpring.api;
 import com.example.demoSpring.model.Person;
 import com.example.demoSpring.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +21,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@RequestBody Person person){
+    public void addPerson(@NonNull @RequestBody Person person){
         personService.addPerson(person);
     }
 
@@ -39,7 +41,7 @@ public class PersonController {
     }
 
     @PutMapping(path = "{id}")
-    public void deletePersonById(@PathVariable("id") UUID id, @RequestBody Person p){
+    public void deletePersonById(@PathVariable("id") UUID id,@NonNull @RequestBody Person p){
         personService.updatePersonById(id, p);
     }
 
