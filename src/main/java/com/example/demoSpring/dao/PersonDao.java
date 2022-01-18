@@ -21,8 +21,8 @@ public interface PersonDao {
     Optional<Person> selectPersonById(UUID id);
 
     //Delete
-    int DeletePersonById(UUID id);
+    int deletePersonById(UUID id);
 
     //Update
-    int UpdatePersonById(UUID id, Person person);
+    int updatePersonById(UUID id, Person person);
 }
