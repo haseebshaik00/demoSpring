@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@RequestMapping("api/v1/person")
+@RequestMapping("")
 @RestController
 public class PersonController {
     private final PersonService personService;
@@ -44,6 +44,4 @@ public class PersonController {
     public void deletePersonById(@PathVariable("id") UUID id,@NonNull @RequestBody Person p){
         personService.updatePersonById(id, p);
     }
-
-
 }
